@@ -5,6 +5,8 @@ import { GameProvider } from "./context/GameProvider";
 import { Howl } from "howler";
 import Game from "./pages/Game";
 import Home from "./pages/Home";
+import Loading from "./pages/Loading";
+import { time } from "framer-motion/m";
 
 // define a set of images
 
@@ -17,6 +19,11 @@ function App() {
   const handlePlaySound = () => {
     if (sound && !sound.playing()) {
       sound.play();
+    }
+  };
+  const handleStopSound = () => {
+    if (sound && sound.playing()) {
+      sound.stop();
     }
   };
   useEffect(() => {
@@ -36,7 +43,7 @@ function App() {
       return () => {
         newSound.stop();
       };
-    } else {
+    } else if (section === "home") {
       const newSound = new Howl({
         src: ["/audio/happy.mp3"],
         autoplay: true,
@@ -52,6 +59,20 @@ function App() {
       return () => {
         newSound.stop();
       };
+    } else {
+      // const newSound = new Howl({
+      //   src: ["/audio/happy.mp3"],
+      //   autoplay: true,
+      //   loop: true,
+      //   volume: 0.15,
+      // });
+      // setSound(newSound);
+      // if (!newSound.playing()) {
+      //   newSound.play();
+      // }
+      // return () => {
+      //   newSound.stop();
+      // };
     }
   }, [section]);
 
@@ -65,9 +86,15 @@ function App() {
             handlePlaySound={handlePlaySound}
           />
         )}
-
+        {section === "loading" && (
+          <Loading section={section} handleSection={handleSection} />
+        )}
         {section === "game" && (
-          <Game section={section} handleSection={handleSection} />
+          <Game
+            section={section}
+            handleSection={handleSection}
+            handleStopSound={handleStopSound}
+          />
         )}
       </MainLayout>
     </GameProvider>

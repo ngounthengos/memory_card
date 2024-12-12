@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: "Chocolate Bar Demo",
+        sans: ["Chewy"],
       },
     },
   },

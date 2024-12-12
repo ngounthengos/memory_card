@@ -15,3 +15,13 @@
     url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.svg#Chocolate Bar Demo")
       format("svg");
 }
+
+/* @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap"); */
+@font-face {
+  font-family: "Chewy";
+  src: url("/fonts/Chewy-Regular.woff2") format("woff2"),
+    url("/fonts/Chewy-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
