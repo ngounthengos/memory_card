@@ -23,7 +23,7 @@ function App() {
     if (section === "game") {
       const newSound = new Howl({
         src: ["/audio/win.mp3"],
-        // autoplay: true,
+        autoplay: true,
         loop: true,
         volume: 0.15,
       });
@@ -39,7 +39,7 @@ function App() {
     } else {
       const newSound = new Howl({
         src: ["/audio/happy.mp3"],
-        // autoplay: true,
+        autoplay: true,
         loop: true,
         volume: 0.15,
       });
