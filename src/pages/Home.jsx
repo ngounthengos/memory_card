@@ -5,17 +5,24 @@ export default function Home({ section, handleSection }) {
     return (
       <div className="w-full h-screen flex items-center justify-center">
         <div className="w-[65vw] relative">
-          <img src="/images/land.webp" alt="" className="w-full" />
+          <img
+            src="/images/land.webp"
+            alt=""
+            className="w-full"
+            style={{ pointerEvents: "none" }}
+          />
           <motion.img
             src="/images/logo.webp"
             className="absolute w-[15%] -top-[7%] left-[37.5%]"
             // animate={{ rotate: [0, 2, 0], scale: [1, 1.05, 1] }}
+            style={{ pointerEvents: "none" }}
             transition={{ repeat: Infinity, duration: 2 }}
           />
           <motion.img
             src="/images/play.webp"
             onClick={() => handleSection("game")}
             className="absolute w-[11.5%] bottom-[32%] left-[7.5%]"
+            style={{ pointerEvents: "none" }}
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ repeat: Infinity, duration: 1 }}
           />
@@ -32,7 +39,7 @@ export default function Home({ section, handleSection }) {
             handleSection("game");
           }}
         >
-          <img src="/images/robot.webp" />
+          <img src="/images/robot.webp" style={{ pointerEvents: "none" }} />
         </div>
       </div>
     );
