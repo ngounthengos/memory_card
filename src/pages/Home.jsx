@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-export default function Home({ section, handleSection }) {
+export default function Home({ section, handleSection, handlePlaySound }) {
   if (section === "home") {
     return (
       <div className="w-full h-screen flex items-center justify-center">
@@ -19,7 +19,9 @@ export default function Home({ section, handleSection }) {
             transition={{ repeat: Infinity, duration: 2 }}
           />
           <motion.button
-            onClick={() => handleSection("game")}
+            onClick={() => {
+              handleSection("game"), handlePlaySound();
+            }}
             className="absolute w-[11.5%] bottom-[32%] left-[7.5%] z-50"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ repeat: Infinity, duration: 1 }}

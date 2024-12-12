@@ -58,9 +58,12 @@ function App() {
   return (
     <GameProvider>
       <MainLayout>
-        <button onClick={handlePlaySound}>Play Sound</button>
         {section === "home" && (
-          <Home section={section} handleSection={handleSection} />
+          <Home
+            section={section}
+            handleSection={handleSection}
+            handlePlaySound={handlePlaySound}
+          />
         )}
 
         {section === "game" && (
