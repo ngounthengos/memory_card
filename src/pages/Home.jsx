@@ -18,14 +18,19 @@ export default function Home({ section, handleSection }) {
             style={{ pointerEvents: "none" }}
             transition={{ repeat: Infinity, duration: 2 }}
           />
-          <motion.img
-            src="/images/play.webp"
+          <motion.button
             onClick={() => handleSection("game")}
-            className="absolute w-[11.5%] bottom-[32%] left-[7.5%]"
-            style={{ pointerEvents: "none" }}
+            className="absolute w-[11.5%] bottom-[32%] left-[7.5%] z-50"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ repeat: Infinity, duration: 1 }}
-          />
+          >
+            <img
+              src="/images/play.webp"
+              style={{ pointerEvents: "none" }}
+              alt="play game"
+              className="w-full"
+            />
+          </motion.button>
         </div>
       </div>
     );

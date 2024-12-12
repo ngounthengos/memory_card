@@ -14,7 +14,11 @@ function App() {
   const handleSection = (newSection) => {
     setSection(newSection);
   };
-
+  const handlePlaySound = () => {
+    if (sound && !sound.playing()) {
+      sound.play();
+    }
+  };
   useEffect(() => {
     if (section === "game") {
       const newSound = new Howl({
@@ -54,6 +58,7 @@ function App() {
   return (
     <GameProvider>
       <MainLayout>
+        <button onClick={handlePlaySound}>Play Sound</button>
         {section === "home" && (
           <Home section={section} handleSection={handleSection} />
         )}
