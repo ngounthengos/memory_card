@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Howl } from "howler";
+import { p } from "framer-motion/client";
 
-const Card = ({ card, onClick, isFillped }) => {
+const Card = ({ card, onClick, isFillped, peek }) => {
+  const [sound] = useState(
+    new Howl({
+      src: ["/audio/open.mp3"],
+      volume: 1,
+    })
+  );
+  useEffect(() => {
+    if (isFillped) {
+      if (!peek) {
+        sound.play();
+      }
+    }
+  }, [isFillped]);
   return (
     <div
       className={`card ${
-        isFillped ? "flipped" : ""
-      } w-24 h-32 lg:w-36 lg:h-44 m-2`}
+        isFillped ? "" : ""
+      } border-[0.35vw] select-none aspect-square w-full rounded-[12%] border-[#006838] overflow-hidden`}
       onClick={() => onClick(card)}
     >
       <div
-        className={`inner-card w-full h-full flex items-center justify-center bg-white border border-gray-300 rounded-xl ${
+        className={`inner-card w-full h-full flex items-center justify-center bg-white ${
           card.matched ? "matched" : ""
         }`}
       >
@@ -20,9 +35,11 @@ const Card = ({ card, onClick, isFillped }) => {
             className="w-full h-full object-cover rounded-xl"
           />
         ) : (
-          <div className="bg-violet-400 rounded-xl w-full h-full flex items-center justify-center text-2xl text-white">
-            ?
-          </div>
+          <img
+            src="/images/card_back.png"
+            alt="card"
+            className="w-full h-full object-cover rounded-xl"
+          />
         )}
       </div>
     </div>

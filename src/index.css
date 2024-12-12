@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Chocolate Bar Demo";
+  src: url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.eot");
+  src: url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/c0297d128dca5d030f21fd9dfeb79956.svg#Chocolate Bar Demo")
+      format("svg");
+}
