@@ -7,7 +7,7 @@ export default function Status({ score, timeLeft, peek, timePrep }) {
     <div className="w-[80%] mx-auto text-[3.6vw] pt-[5vh] flex justify-between items-center select-none font-sans">
       <div className="text-white">
         {peek ? (
-          <p className="animate animate-pulse">Get Ready</p>
+          <p className="animate animate-pulse">Remember and Get Ready</p>
         ) : (
           <p>Score: {score}</p>
         )}

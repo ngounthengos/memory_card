@@ -6,7 +6,6 @@ import { Howl } from "howler";
 import Game from "./pages/Game";
 import Home from "./pages/Home";
 import Loading from "./pages/Loading";
-import { time } from "framer-motion/m";
 
 // define a set of images
 
@@ -78,25 +77,23 @@ function App() {
 
   return (
     <GameProvider>
-      <MainLayout>
-        {section === "home" && (
-          <Home
-            section={section}
-            handleSection={handleSection}
-            handlePlaySound={handlePlaySound}
-          />
-        )}
-        {section === "loading" && (
-          <Loading section={section} handleSection={handleSection} />
-        )}
-        {section === "game" && (
-          <Game
-            section={section}
-            handleSection={handleSection}
-            handleStopSound={handleStopSound}
-          />
-        )}
-      </MainLayout>
+      {section === "home" && (
+        <Home
+          section={section}
+          handleSection={handleSection}
+          handlePlaySound={handlePlaySound}
+        />
+      )}
+      {section === "loading" && (
+        <Loading section={section} handleSection={handleSection} />
+      )}
+      {section === "game" && (
+        <Game
+          section={section}
+          handleSection={handleSection}
+          handleStopSound={handleStopSound}
+        />
+      )}
     </GameProvider>
   );
 }

@@ -43,17 +43,24 @@ export default function Result({
     return (
       <div className="absolute w-full h-full top-0 left-0 backdrop-blur-lg bg-black/50">
         <div className="w-full h-full flex items-center justify-center relative pb-[20vh]">
-          <DotLottieReact
-            src="/lotties/win.lottie"
-            autoplay
-            className="w-[70%]"
-          />
+          {/* <DotLottieReact
+      src="/lotties/win.lottie"
+      autoplay
+      className="w-[70%]"
+    /> */}
           <motion.img
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.25, ease: "easeIn", delay: 0.5 }}
-            src="/images/text-win.png"
-            className="w-[27.5%] absolute -translate-y-1/2 top-[59%]"
+            src="/images/prize_icon.webp"
+            className="w-[30%] absolute pt-[10%]"
+          ></motion.img>
+          <motion.img
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.25, ease: "easeIn", delay: 0.6 }}
+            src="/images/prize_text.webp"
+            className="w-[38%] absolute -translate-y-1/2 top-[58%]"
           ></motion.img>
         </div>
         <DotLottieReact

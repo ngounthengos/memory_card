@@ -5,9 +5,10 @@ import Result from "../components/Result";
 import Controller from "../components/Controller";
 import { GameContext } from "../context/GameProvider";
 import { Howl } from "howler";
+import MainLayout from "../layouts/MainLayout";
 
 const images = [
-  "/images/card_dha.webp",
+  "/images/card_brain.webp",
   "/images/card_kid.webp",
   "/images/card_dugro.webp",
   "/images/card_logo.webp",
@@ -49,7 +50,7 @@ export default function Game({ section, handleSection, handleStopSound }) {
   const [wrong] = useState(
     new Howl({
       src: ["/audio/wrong.mp3"],
-      volume: 1.5,
+      volume: 0.5,
     })
   );
 
@@ -148,42 +149,44 @@ export default function Game({ section, handleSection, handleStopSound }) {
   }, [timeLeft]);
   if (section === "game")
     return (
-      <div className="w-full h-screen flex justify-center items-center relative flex-col">
-        <Status
-          timeLeft={timeLeft}
-          peek={peek}
-          timePrep={timePrep}
-          score={score}
-          handleStopSound={handleStopSound}
-        />
-        <div className="grow flex items-center justify-center w-[80%] mx-auto pb-[5vh]">
-          <div className="grid grid-cols-4 gap-8 w-full">
-            {cards.map((card) => (
-              <Card
-                key={card.id}
-                peek={peek}
-                onClick={handleClick}
-                card={card}
-                isFillped={
-                  filppedCards.some(
-                    (flippedCard) => flippedCard.id === card.id
-                  ) ||
-                  card.matched ||
-                  peek
-                }
+      <MainLayout>
+        <div className="w-full h-screen flex justify-center items-center relative flex-col">
+          <Status
+            timeLeft={timeLeft}
+            peek={peek}
+            timePrep={timePrep}
+            score={score}
+            handleStopSound={handleStopSound}
+          />
+          <div className="grow flex items-center justify-center w-[80%] mx-auto pb-[5vh]">
+            <div className="grid grid-cols-4 gap-8 w-full">
+              {cards.map((card) => (
+                <Card
+                  key={card.id}
+                  peek={peek}
+                  onClick={handleClick}
+                  card={card}
+                  isFillped={
+                    filppedCards.some(
+                      (flippedCard) => flippedCard.id === card.id
+                    ) ||
+                    card.matched ||
+                    peek
+                  }
+                />
+              ))}
+              <Result
+                matchedPairs={matchedPairs}
+                cards={cards}
+                timeLeft={timeLeft}
+                handleSection={handleSection}
+                reset={reset}
+                handleStopSound={handleStopSound}
               />
-            ))}
-            <Result
-              matchedPairs={matchedPairs}
-              cards={cards}
-              timeLeft={timeLeft}
-              handleSection={handleSection}
-              reset={reset}
-              handleStopSound={handleStopSound}
-            />
+            </div>
           </div>
+          {/* <Controller handleSection={handleClick} /> */}
         </div>
-        {/* <Controller handleSection={handleClick} /> */}
-      </div>
+      </MainLayout>
     );
 }

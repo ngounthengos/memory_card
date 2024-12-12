@@ -1,4 +1,6 @@
 import React from "react";
+import HomeLayout from "../layouts/HomeLayout";
+import { motion } from "framer-motion";
 export default function Home({ section, handleSection }) {
   // if (section === "home") {
   //   return (
@@ -38,19 +40,49 @@ export default function Home({ section, handleSection }) {
   // }
   if (section === "home") {
     return (
-      <div className="w-full h-screen flex justify-center items-center relative flex-col">
-        <div
-          className="w-[80%]"
-          onClick={() => {
-            handleSection("loading");
-          }}
-        >
-          <img
-            src="/images/banner-robot.png"
-            style={{ pointerEvents: "none" }}
-          />
+      <HomeLayout>
+        <div className="w-full h-screen flex justify-center items-center relative flex-col z-10 pb-[5%]">
+          <div className="w-[50%] relative">
+            <motion.img
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.15, delay: 0.4, ease: "easeIn" }}
+              src="/images/welcome.png"
+              style={{ pointerEvents: "none" }}
+            ></motion.img>
+            <motion.img
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.15, delay: 0.4, ease: "easeIn" }}
+              src="/images/right.png"
+              style={{ pointerEvents: "none" }}
+              className="absolute -right-[10%] top-[15%] w-[10%]"
+            ></motion.img>
+            <motion.img
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.15, delay: 0.5, ease: "easeIn" }}
+              src="/images/left.png"
+              style={{ pointerEvents: "none" }}
+              className="absolute -left-[12.5%] -bottom-[7.5%] w-[10%]"
+            ></motion.img>
+          </div>
+          <div
+            className="w-[52%] translate-x-[5%]"
+            onClick={() => {
+              handleSection("loading");
+            }}
+          >
+            <motion.img
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.15, delay: 0.3, ease: "easeIn" }}
+              src="/images/robot-banner.png"
+              style={{ pointerEvents: "none" }}
+            ></motion.img>
+          </div>
         </div>
-      </div>
+      </HomeLayout>
     );
   }
 }
