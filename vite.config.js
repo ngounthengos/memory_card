@@ -29,6 +29,7 @@ export default defineConfig({
 
       // includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       // includeAssets: ["**/*"],
+      includeAssets: ["**/*"], // Preload all assets in the public directory
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

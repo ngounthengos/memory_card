@@ -36,7 +36,7 @@ const Card = ({ card, onClick, isFillped, peek }) => {
           />
         ) : (
           <img
-            src="/images/card_back.png"
+            src="/images/card_back.webp"
             alt="card"
             className="w-full h-full object-cover rounded-xl"
           />

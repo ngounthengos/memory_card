@@ -7,10 +7,10 @@ import { GameContext } from "../context/GameProvider";
 import { Howl } from "howler";
 
 const images = [
-  "/images/card_dha.png",
-  "/images/card_kid.png",
-  "/images/card_dugro.png",
-  "/images/card_logo.png",
+  "/images/card_dha.webp",
+  "/images/card_kid.webp",
+  "/images/card_dugro.webp",
+  "/images/card_logo.webp",
 ];
 
 const generateCards = () => {
