@@ -55,7 +55,6 @@ export default function HomeLayout({ children }) {
           className="object-cover bg-blend-darken w-full"
         ></motion.img>
       </div>
-      <p>wasm</p>
     </div>
   );
 }
