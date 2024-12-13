@@ -54,6 +54,23 @@ export default defineConfig({
             },
           },
         },
+
+        {
+          urlPattern: new RegExp(
+            "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web@0.38.2/dist/dotlottie-player.wasm"
+          ), // Cache the specific WASM file
+          handler: "CacheFirst",
+          options: {
+            cacheName: "external-wasm-cache",
+            expiration: {
+              maxEntries: 1,
+              maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+            },
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
       ],
       manifest: {
         name: "Memory Game",

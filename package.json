@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.11.1",
+    "@lottiefiles/dotlottie-web": "^0.38.2",
     "framer-motion": "^11.13.5",
     "howler": "^2.2.4",
+    "lottie-web": "^5.12.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-lottie-player": "^2.1.0",
