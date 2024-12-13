@@ -6,14 +6,14 @@ export default function HomeLayout({ children }) {
     <div className="h-[100vh] w-[100vw] text-center bg-[#5bc33d] overflow-hidden relative">
       {children}
       <motion.img
-        src="/images/cloud.png"
+        src="/images/cloud.webp"
         className="w-[20%] absolute top-[20%] right-0"
         initial={{ x: "100%" }}
         animate={{ x: "-100vw" }}
         transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
       ></motion.img>
       <motion.img
-        src="/images/cloud.png"
+        src="/images/cloud.webp"
         className="w-[14%] absolute top-[30%] right-0"
         initial={{ x: "80vw" }}
         animate={{ x: "-100vw" }}
@@ -25,7 +25,7 @@ export default function HomeLayout({ children }) {
       ></motion.img>
 
       <motion.img
-        src="/images/cloud.png"
+        src="/images/cloud.webp"
         className="w-[8%] absolute top-[50%] right-0"
         initial={{ x: "160vw" }}
         animate={{ x: "-100vw" }}
@@ -36,7 +36,7 @@ export default function HomeLayout({ children }) {
         }}
       ></motion.img>
       <motion.img
-        src="/images/cloud.png"
+        src="/images/cloud.webp"
         className="w-[8%] absolute top-[60%] right-0"
         initial={{ x: "40vw" }}
         animate={{ x: "-100vw" }}
@@ -51,7 +51,7 @@ export default function HomeLayout({ children }) {
           initial={{ rotate: 0 }}
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 360 }}
-          src="/images/ray.png"
+          src="/images/ray.webp"
           className="object-cover bg-blend-darken w-full"
         ></motion.img>
       </div>

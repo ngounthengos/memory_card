@@ -47,14 +47,14 @@ export default function Home({ section, handleSection }) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.15, delay: 0.4, ease: "easeIn" }}
-              src="/images/welcome.png"
+              src="/images/welcome.webp"
               style={{ pointerEvents: "none" }}
             ></motion.img>
             <motion.img
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.15, delay: 0.4, ease: "easeIn" }}
-              src="/images/right.png"
+              src="/images/right.webp"
               style={{ pointerEvents: "none" }}
               className="absolute -right-[10%] top-[15%] w-[10%]"
             ></motion.img>
@@ -62,7 +62,7 @@ export default function Home({ section, handleSection }) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.15, delay: 0.5, ease: "easeIn" }}
-              src="/images/left.png"
+              src="/images/left.webp"
               style={{ pointerEvents: "none" }}
               className="absolute -left-[12.5%] -bottom-[7.5%] w-[10%]"
             ></motion.img>
@@ -77,7 +77,7 @@ export default function Home({ section, handleSection }) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.15, delay: 0.3, ease: "easeIn" }}
-              src="/images/robot-banner.png"
+              src="/images/robot-banner.webp"
               style={{ pointerEvents: "none" }}
             ></motion.img>
           </div>

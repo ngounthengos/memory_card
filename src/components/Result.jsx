@@ -54,6 +54,7 @@ export default function Result({
             transition={{ duration: 0.25, ease: "easeIn", delay: 0.5 }}
             src="/images/prize_icon.webp"
             className="w-[30%] absolute pt-[10%]"
+            style={{ pointerEvents: "none" }}
           ></motion.img>
           <motion.img
             initial={{ scale: 0 }}
@@ -61,6 +62,7 @@ export default function Result({
             transition={{ duration: 0.25, ease: "easeIn", delay: 0.6 }}
             src="/images/prize_text.webp"
             className="w-[38%] absolute -translate-y-1/2 top-[58%]"
+            style={{ pointerEvents: "none" }}
           ></motion.img>
         </div>
         <DotLottieReact
@@ -86,7 +88,11 @@ export default function Result({
             loop
             className="w-[50%]"
           />
-          <img src="/images/text_lose.png" className="w-[30%]" />
+          <img
+            src="/images/text_lose.webp"
+            className="w-[30%]"
+            style={{ pointerEvents: "none" }}
+          />
         </div>
       </div>
     );

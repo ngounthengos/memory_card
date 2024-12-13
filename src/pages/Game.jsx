@@ -29,11 +29,11 @@ export default function Game({ section, handleSection, handleStopSound }) {
   const [filppedCards, setFlippedCards] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [isChecking, setIsChecking] = useState(false);
-  const [timePrep, setTimePrep] = useState(10); // Countdown timer state 3
+  const [timePrep, setTimePrep] = useState(5); // Countdown timer state 3
   const [peek, setPeek] = useState(true);
   const [state, setState] = useState("win");
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(40);
+  const [timeLeft, setTimeLeft] = useState(25);
 
   const [sound] = useState(
     new Howl({

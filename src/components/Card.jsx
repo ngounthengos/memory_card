@@ -37,12 +37,14 @@ const Card = ({ card, onClick, isFillped, peek }) => {
             src={card.image}
             alt="card"
             className="w-full h-full object-cover rounded-xl"
+            style={{ pointerEvents: "none" }}
           />
         ) : (
           <img
             src="/images/card_back.webp"
             alt="card"
             className="w-full h-full object-cover rounded-xl"
+            style={{ pointerEvents: "none" }}
           />
         )}
       </div>
