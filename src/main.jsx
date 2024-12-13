@@ -8,7 +8,6 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App section="home" />} />
-      <Route path="/game" element={<App section="game" />} />
     </Routes>
   </BrowserRouter>
 );
