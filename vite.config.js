@@ -10,7 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  assetsInclude: ["**/*.lottie"], // Add this line to include .lottie files as assets
+  assetsInclude: ["**/*.lottie", "**/*.wasm"], // Add this line to include .lottie and .wasm files as assets
   plugins: [
     react(),
     VitePWA({
@@ -20,7 +20,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: [
-          "**/*.{js,jsx,json,css,html,ico,png,svg,webp,jpg,woff,woff2,mp3,lottie}",
+          "**/*.{js,jsx,json,css,html,ico,png,svg,webp,jpg,woff,woff2,mp3,lottie,wasm}",
         ],
         maximumFileSizeToCacheInBytes: 50000000, // Increase the limit to 50MB or any other value you prefer
       },
@@ -31,6 +31,20 @@ export default defineConfig({
           handler: "CacheFirst",
           options: {
             cacheName: "lottie-files-cache",
+            expiration: {
+              maxEntries: 20,
+              maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+            },
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+        {
+          urlPattern: /.*\.wasm$/, // Cache WASM files
+          handler: "CacheFirst",
+          options: {
+            cacheName: "wasm-files-cache",
             expiration: {
               maxEntries: 20,
               maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
