@@ -59,6 +59,21 @@ export default defineConfig({
             },
           },
         },
+
+        {
+          urlPattern: /.*\.lottie$/, // Cache Lottie files
+          handler: "CacheFirst",
+          options: {
+            cacheName: "lottie-files-cache",
+            expiration: {
+              maxEntries: 20,
+              maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+            },
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
       ],
       manifest: {
         name: "Memory Game",
@@ -70,7 +85,7 @@ export default defineConfig({
         display_override: ["window-controls-overlay"],
         categories: ["education", "book", "lifestyle"],
         display: "standalone",
-        orientation: "portrait",
+        orientation: "landscape",
         edge_side_panel: {
           preferred_width: 200,
         },
@@ -522,98 +537,6 @@ export default defineConfig({
           {
             src: "ios/1024.png",
             sizes: "1024x1024",
-          },
-        ],
-        screenshots: [
-          {
-            src: "/images/screenshot11.png",
-            type: "image/png",
-            sizes: "851x393",
-            form_factor: "narrow",
-          },
-          {
-            src: "/images/screenshot12.png",
-            type: "image/png",
-            sizes: "851x393",
-            form_factor: "narrow",
-          },
-          {
-            src: "/images/screenshot13.png",
-            type: "image/png",
-            sizes: "851x393",
-            form_factor: "narrow",
-          },
-          {
-            src: "/images/screenshot14.png",
-            type: "image/png",
-            sizes: "851x393",
-            form_factor: "narrow",
-          },
-          {
-            src: "/images/screenshot15.png",
-            type: "image/png",
-            sizes: "851x393",
-            form_factor: "narrow",
-          },
-          {
-            src: "/images/screenshot21.png",
-            type: "image/jpg",
-            sizes: "720x540",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot22.png",
-            type: "image/jpg",
-            sizes: "720x540",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot23.png",
-            type: "image/jpg",
-            sizes: "720x540",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot24.png",
-            type: "image/jpg",
-            sizes: "720x540",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot25.png",
-            type: "image/jpg",
-            sizes: "720x540",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot31.png",
-            type: "image/jpg",
-            sizes: "1024x768",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot32.png",
-            type: "image/jpg",
-            sizes: "1024x768",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot33.png",
-            type: "image/jpg",
-            sizes: "1024x768",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot34.png",
-            type: "image/jpg",
-            sizes: "1024x768",
-            form_factor: "wide",
-          },
-          {
-            src: "/images/screenshot35.png",
-            type: "image/jpg",
-            sizes: "1024x768",
-            form_factor: "wide",
           },
         ],
         splash_pages: null,
