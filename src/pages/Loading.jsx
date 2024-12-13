@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Howl } from "howler";
+import pulse from "../assets/lotties/pulse.lottie";
 
 export default function Loading({ handleSection, section }) {
   const [countdown, setCountdown] = useState(3);
@@ -29,13 +30,7 @@ export default function Loading({ handleSection, section }) {
   }, [countdown]);
   return (
     <div className="w-full h-screen flex justify-center items-center relative flex-col">
-      <DotLottieReact
-        src="/lotties/pulse.lottie"
-        autoplay
-        loop
-        className="w-[60%]"
-        startFrame={100} // Customize the start frame
-      />
+      <DotLottieReact src={pulse} autoplay loop className="w-[60%]" />
       <div className="w-full h-full absolute">
         <div className="text-center w-full h-full flex items-center justify-center text-[10vw]">
           {countdown}

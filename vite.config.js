@@ -5,14 +5,12 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-    chunkSizeWarningLimit: 20000, // Set the limit to 2000 KB (2 MB) or any other value you prefer
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  assetsInclude: ["**/*.lottie"], // Add this line to include .lottie files as assets
   plugins: [
     react(),
     VitePWA({
@@ -26,40 +24,8 @@ export default defineConfig({
         ],
         maximumFileSizeToCacheInBytes: 50000000, // Increase the limit to 50MB or any other value you prefer
       },
-
-      // includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
-      // includeAssets: ["**/*"],
       includeAssets: ["**/*"], // Preload all assets in the public directory
       runtimeCaching: [
-        {
-          urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-          handler: "CacheFirst",
-          options: {
-            cacheName: "google-fonts-cache",
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-        {
-          urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-          handler: "CacheFirst",
-          options: {
-            cacheName: "gstatic-fonts-cache",
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-
         {
           urlPattern: /.*\.lottie$/, // Cache Lottie files
           handler: "CacheFirst",
@@ -80,10 +46,10 @@ export default defineConfig({
         short_name: "Memory",
         description:
           "Memory Game for Kids - A simple memory game for kids to play and learn.",
-        theme_color: "#fffbeb",
-        background_color: "#fffbeb",
+        theme_color: "#BB9242",
+        background_color: "#BB9242",
         display_override: ["window-controls-overlay"],
-        categories: ["education", "book", "lifestyle"],
+        categories: ["education"],
         display: "standalone",
         orientation: "landscape",
         edge_side_panel: {
