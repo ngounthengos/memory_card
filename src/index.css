@@ -26,9 +26,9 @@
   font-display: swap;
 }
 /* Prevent scrolling on iOS and iPadOS */
-html,
+/* html,
 body {
   overflow: hidden;
   height: 100%;
   touch-action: none;
-}
+} */
