@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Lottie from "react-lottie-player";
+import sadAnimation from "../assets/lotties/sad.json"; // Import the JSON file
+import confettiAnimation from "../assets/lotties/confetti.json"; // Import the JSON file
 import { motion } from "framer-motion";
 
 import { Howl } from "howler";
@@ -65,10 +67,11 @@ export default function Result({
             style={{ pointerEvents: "none" }}
           ></motion.img>
         </div>
-        <DotLottieReact
-          src="/lotties/confetti.lottie"
-          autoplay
-          className="w-[150%] -translate-x-1/2 left-1/2 absolute top-0"
+        <Lottie
+          animationData={confettiAnimation}
+          play
+          loop={false} // Prevent the animation from looping
+          className="w-[140%] -translate-x-1/2 left-1/2 absolute -translate-y-1/2 top-1/2"
         />
       </div>
     );
@@ -82,11 +85,11 @@ export default function Result({
     return (
       <div className="absolute w-full h-full top-0 left-0 backdrop-blur-lg bg-black/50">
         <div className="w-full h-full flex items-center justify-center relative flex-col space-y-[1%] pb-[5vh]">
-          <DotLottieReact
-            src="/lotties/sad.lottie"
-            autoplay
+          <Lottie
+            animationData={sadAnimation}
+            play
             loop
-            className="w-[50%]"
+            style={{ width: "30%" }}
           />
           <img
             src="/images/text_lose.webp"

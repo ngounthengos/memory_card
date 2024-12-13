@@ -34,7 +34,7 @@ export default function Loading({ handleSection, section }) {
         animationData={pulseAnimation}
         play
         loop
-        style={{ width: "60%" }}
+        style={{ width: "30%" }}
       />
       <div className="w-full h-full absolute">
         <div className="text-center w-full h-full flex items-center justify-center text-[10vw]">
