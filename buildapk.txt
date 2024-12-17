@@ -1,0 +1,45 @@
+Plan for Building APK
+Install required dependencies
+Configure build settings
+Generate keystore
+Update vite.config.js with Android settings
+Build for production
+Generate APK
+Steps
+1. Install Dependencies
+i @capacitor/core @capacitor/android
+2. Initialize Capacitor
+npx cap init "Memory Game" com.memorygame.app
+3. Add Android Platform
+npx cap add android
+4. Generate Keystore
+keytool -genkey -v -keystore memory-game.keystore -alias memory-game -keyalg RSA -keysize 2048 -validity 10000
+5. Update Capacitor Config
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.memorygame.app',
+  appName: 'Memory Game',
+  webDir: 'dist',
+  bundledWebRuntime: false,
+  server: {
+    androidScheme: 'https'
+  }
+};
+
+export default config;
+6. Build Commands
+# Build the web app
+npm run build
+
+# Sync with Android
+npx cap sync
+
+# Open in Android Studio
+npx cap open android
+7. In Android Studio
+Build > Generate Signed Bundle/APK
+Select APK
+Choose existing keystore or create new
+Build > Build Bundle(s)/APK(s) > Build APK(s)
+The APK will be generated in: android/app/build/outputs/apk/release/app-release.apk
