@@ -79,13 +79,10 @@ export default defineConfig({
           "Memory Game for Kids - A simple memory game for kids to play and learn.",
         theme_color: "#BB9242",
         background_color: "#BB9242",
-        display_override: ["window-controls-overlay"],
         categories: ["education"],
-        display: "standalone",
-        orientation: "landscape",
-        edge_side_panel: {
-          preferred_width: 200,
-        },
+        display: "fullscreen",
+        display_override: ["fullscreen", "standalone"],
+        orientation: "landscape", // Force landscape
         icons: [
           {
             src: "windows11/SmallTile.scale-100.png",
